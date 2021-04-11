@@ -1,0 +1,26 @@
+MyMultiSelectionFormField<AlatKontrasepsi>(
+                  // decoration: InputDecoration(
+                  //   labelText:
+                  //       'Alat kontrasepsi yang Anda pernah saudari digunakan?',
+                  // ),
+                  hint: Text('pilih Alat Kontrasepsi'),
+                  isDense: true,
+                  focusNode: alatKontrasepsiFocusNodes,
+                  //focusNode: alatKontrasepsiFocusNode,
+                  options: AlatKontrasepsi.values,
+                  titleBuilder: (interest) => Text(describeEnum(interest)),
+                  chipLabelBuilder: (interest) => Text(describeEnum(interest)),
+                  initialValues: _formResult.alatKontrasepsi,
+                  validator: (alatKontrasepsi) => alatKontrasepsi.length > 1
+                      ? 'Pilih satu alat kontrasepsi yang sering digunakan'
+                      : null,
+                  onSaved: (alatKontrasepsi) {
+                    _formResult.alatKontrasepsi = alatKontrasepsi;
+                  },
+                  focusNodes: [alatKontrasepsiFocusNodes],
+                  onChanged: (_) {
+                    FocusScope.of(context).unfocus();
+                    FocusScope.of(context)
+                        .requestFocus(alatKontrasepsiFocusNodes);
+                  },
+                ),

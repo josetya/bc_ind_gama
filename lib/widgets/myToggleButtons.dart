@@ -958,9 +958,10 @@ class MyTextFormField extends FormField<String> {
 
   /// Controls the text being edited.
   ///
-  /// If null, this widget will create its own [TextEditingController] and
-  /// initialize its [TextEditingController.text] with [initialValue].
+  /// If null, this widget will create its own TextEditingController and
+  /// initialize its [TextEditingController.text with [initialValue].
   final TextEditingController controller;
+
 
   @override
   _MyTextFormFieldState createState() => _MyTextFormFieldState();
